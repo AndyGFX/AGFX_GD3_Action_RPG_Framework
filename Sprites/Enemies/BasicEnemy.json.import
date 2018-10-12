@@ -1,0 +1,16 @@
+[remap]
+
+importer="eska.aseprite_importer"
+type="PackedScene"
+path="res://.import/BasicEnemy.json-92a8be11e75e3d852fb62c58b38bde0c.scn"
+
+[deps]
+
+source_file="res://Sprites/Enemies/BasicEnemy.json"
+dest_files=[ "res://.import/BasicEnemy.json-92a8be11e75e3d852fb62c58b38bde0c.scn" ]
+
+[params]
+
+sheet_image="res://Sprites/Enemies/BasicEnemy.png"
+post_script=""
+autoplay_animation="Default"

@@ -1,0 +1,16 @@
+[remap]
+
+importer="eska.aseprite_importer"
+type="PackedScene"
+path="res://.import/CubicWeaponPulseAnimation.json-8f0e97ba468d9925d4b0be4b2aad412d.scn"
+
+[deps]
+
+source_file="res://Animations/Player/CubicWeaponPulseAnimation.json"
+dest_files=[ "res://.import/CubicWeaponPulseAnimation.json-8f0e97ba468d9925d4b0be4b2aad412d.scn" ]
+
+[params]
+
+sheet_image=""
+post_script=""
+autoplay_animation=""
