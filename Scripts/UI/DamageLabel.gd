@@ -7,7 +7,7 @@ func _ready():
 	print("Hit info created")
 	pass
 	
-func RemoveHitPoints():
+func RemoveHitPoints(anim_name):
 	print("Hit info removed")
 	get_parent().queue_free()
 	pass 

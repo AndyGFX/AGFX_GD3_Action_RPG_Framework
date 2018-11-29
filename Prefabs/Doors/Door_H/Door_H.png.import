@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/item_7.png-4a7babc37e453ee0fb528db35460fde3.stex"
+path="res://.import/Door_H.png-181a5aa9c98d1986f2715d452d130412.stex"
 
 [deps]
 
-source_file="res://Prefabs/RPG Inventory/Sprites/item_7.png"
-dest_files=[ "res://.import/item_7.png-4a7babc37e453ee0fb528db35460fde3.stex" ]
+source_file="res://Prefabs/Doors/Door_H/Door_H.png"
+dest_files=[ "res://.import/Door_H.png-181a5aa9c98d1986f2715d452d130412.stex" ]
 
 [params]
 
