@@ -81,7 +81,7 @@ patch_margin_left = 16
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 8
-_sections_unfolded = [ "Patch Margin", "Visibility" ]
+_sections_unfolded = [ "Patch Margin" ]
 
 [node name="Label" type="Label" parent="." index="1"]
 
