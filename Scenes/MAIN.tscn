@@ -10,7 +10,7 @@
 [ext_resource path="res://Entities/InfoPanel/InfoPanel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Prefabs/Doors/Door_H/Door-H.tscn" type="PackedScene" id=9]
 
-[node name="MAIN" type="Node2D"]
+[node name="MAIN" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 

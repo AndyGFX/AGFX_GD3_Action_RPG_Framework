@@ -3,9 +3,9 @@
 [ext_resource path="res://Prefabs/Doors/Door_H/Door-H.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/Doors/Door_H/Door_H.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=5]
 
-length = 0.6
+length = 0.7
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -15,15 +15,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = true
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 192, 0, 32, 32 ), Rect2( 224, 0, 32, 32 ), Rect2( 256, 0, 32, 32 ), Rect2( 288, 0, 32, 32 ), Rect2( 320, 0, 32, 32 ), Rect2( 352, 0, 32, 32 ) ]
+"values": [ Rect2( 224, 0, 32, 32 ), Rect2( 256, 0, 32, 32 ), Rect2( 288, 0, 32, 32 ), Rect2( 320, 0, 32, 32 ), Rect2( 352, 0, 32, 32 ), Rect2( 384, 0, 32, 32 ), Rect2( 416, 0, 32, 32 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=6]
 
-length = 0.6
+length = 0.7
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -33,10 +33,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = true
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 0, 0, 32, 32 ), Rect2( 32, 0, 32, 32 ), Rect2( 64, 0, 32, 32 ), Rect2( 96, 0, 32, 32 ), Rect2( 128, 0, 32, 32 ), Rect2( 160, 0, 32, 32 ) ]
+"values": [ Rect2( 0, 0, 32, 32 ), Rect2( 32, 0, 32, 32 ), Rect2( 64, 0, 32, 32 ), Rect2( 96, 0, 32, 32 ), Rect2( 128, 0, 32, 32 ), Rect2( 160, 0, 32, 32 ), Rect2( 192, 0, 32, 32 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -70,7 +70,7 @@ __meta__ = {
 
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 352, 0, 32, 32 )
+region_rect = Rect2( 416, 0, 32, 32 )
 __meta__ = {
 "_ase_imported": true
 }
@@ -82,8 +82,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Close = SubResource( 1 )
-anims/Open = SubResource( 2 )
+anims/Close = SubResource( 5 )
+anims/Open = SubResource( 6 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 __meta__ = {

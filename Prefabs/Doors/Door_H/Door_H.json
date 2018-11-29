@@ -1,6 +1,5 @@
-{ "frames": [
-   {
-    "filename": "Door_H 0.aseprite",
+{ "frames": {
+   "Door_H 0.aseprite": {
     "frame": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
@@ -8,8 +7,7 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   {
-    "filename": "Door_H 1.aseprite",
+   "Door_H 1.aseprite": {
     "frame": { "x": 32, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
@@ -17,8 +15,7 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   {
-    "filename": "Door_H 2.aseprite",
+   "Door_H 2.aseprite": {
     "frame": { "x": 64, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
@@ -26,8 +23,7 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   {
-    "filename": "Door_H 3.aseprite",
+   "Door_H 3.aseprite": {
     "frame": { "x": 96, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
@@ -35,8 +31,7 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   {
-    "filename": "Door_H 4.aseprite",
+   "Door_H 4.aseprite": {
     "frame": { "x": 128, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
@@ -44,8 +39,7 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   {
-    "filename": "Door_H 5.aseprite",
+   "Door_H 5.aseprite": {
     "frame": { "x": 160, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
@@ -53,8 +47,7 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   {
-    "filename": "Door_H 6.aseprite",
+   "Door_H 6.aseprite": {
     "frame": { "x": 192, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
@@ -62,8 +55,7 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   {
-    "filename": "Door_H 7.aseprite",
+   "Door_H 7.aseprite": {
     "frame": { "x": 224, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
@@ -71,8 +63,7 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   {
-    "filename": "Door_H 8.aseprite",
+   "Door_H 8.aseprite": {
     "frame": { "x": 256, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
@@ -80,8 +71,7 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   {
-    "filename": "Door_H 9.aseprite",
+   "Door_H 9.aseprite": {
     "frame": { "x": 288, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
@@ -89,8 +79,7 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   {
-    "filename": "Door_H 10.aseprite",
+   "Door_H 10.aseprite": {
     "frame": { "x": 320, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
@@ -98,29 +87,41 @@
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
    },
-   {
-    "filename": "Door_H 11.aseprite",
+   "Door_H 11.aseprite": {
     "frame": { "x": 352, "y": 0, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
     "sourceSize": { "w": 32, "h": 32 },
     "duration": 100
+   },
+   "Door_H 12.aseprite": {
+    "frame": { "x": 384, "y": 0, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
+   },
+   "Door_H 13.aseprite": {
+    "frame": { "x": 416, "y": 0, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 100
    }
- ],
+ },
  "meta": {
   "app": "http://www.aseprite.org/",
-  "version": "1.1.13",
-  "image": "C:\\__AndyGFX__\\AGFX_GITHUB\\GD3_Action_RPG_Framework\\Prefabs\\Doors\\Door_H\\Door_H.png",
+  "version": "1.2.9-x64",
+  "image": "E:\\_GITHUB_\\GD3_Action_RPG_Framework\\Prefabs\\Doors\\Door_H\\Door_H.png",
   "format": "RGBA8888",
-  "size": { "w": 384, "h": 32 },
+  "size": { "w": 448, "h": 32 },
   "scale": "1",
   "frameTags": [
-   { "name": "Open", "from": 0, "to": 5, "direction": "forward" },
-   { "name": "Close", "from": 6, "to": 11, "direction": "forward" }
-  ],
-  "layers": [
-   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+   { "name": "Open", "from": 0, "to": 6, "direction": "forward" },
+   { "name": "Close", "from": 7, "to": 13, "direction": "forward" }
   ]
  }
 }
