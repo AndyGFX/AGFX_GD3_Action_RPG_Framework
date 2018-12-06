@@ -1,0 +1,16 @@
+[remap]
+
+importer="eska.aseprite_importer"
+type="PackedScene"
+path="res://.import/Door_V.json-41d9edbc41cb52cf52bfef4b8cecad41.scn"
+
+[deps]
+
+source_file="res://Prefabs/Doors/Door_V/Door_V.json"
+dest_files=[ "res://.import/Door_V.json-41d9edbc41cb52cf52bfef4b8cecad41.scn" ]
+
+[params]
+
+sheet_image=""
+post_script=""
+autoplay_animation=""

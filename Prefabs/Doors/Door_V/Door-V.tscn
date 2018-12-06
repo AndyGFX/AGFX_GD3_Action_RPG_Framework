@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Prefabs/Doors/Door_V/Door-V.gd" type="Script" id=1]
+[ext_resource path="res://Prefabs/Doors/Door_V/Door_V.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=5]
+
+length = 0.7
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 112, 0, 16, 32 ), Rect2( 128, 0, 16, 32 ), Rect2( 144, 0, 16, 32 ), Rect2( 160, 0, 16, 32 ), Rect2( 176, 0, 16, 32 ), Rect2( 192, 0, 16, 32 ), Rect2( 208, 0, 16, 32 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+
+length = 0.7
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 16, 32 ), Rect2( 16, 0, 16, 32 ), Rect2( 32, 0, 16, 32 ), Rect2( 48, 0, 16, 32 ), Rect2( 64, 0, 16, 32 ), Rect2( 80, 0, 16, 32 ), Rect2( 96, 0, 16, 32 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12, 23 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 3, 16 )
+
+[node name="Door-V" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+
+[node name="DoorAnim" type="Node2D" parent="." index="0"]
+
+__meta__ = {
+"_ase_imported": true
+}
+
+[node name="Sprite" type="Sprite" parent="DoorAnim" index="0"]
+
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 32 )
+__meta__ = {
+"_ase_imported": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DoorAnim" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Close = SubResource( 5 )
+anims/Open = SubResource( 6 )
+blend_times = [  ]
+__meta__ = {
+"_ase_imported": true
+}
+
+[node name="TriggerZone" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0, 23 )
+shape = SubResource( 7 )
+
+[node name="Blocker" type="StaticBody2D" parent="." index="2"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocker" index="0"]
+
+position = Vector2( 0, 16 )
+shape = SubResource( 4 )
+
+[connection signal="area_entered" from="." to="." method="_on_DoorV_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_DoorV_area_exited"]
+
+
