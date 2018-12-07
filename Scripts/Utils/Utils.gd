@@ -11,7 +11,7 @@ func create_timer(wait_time, target, method, start):
 	return timer
 	pass 
 	
-func find_node(node_name):
+func FindNode(node_name):
 	return get_tree().get_root().find_node(node_name, true, false)
 	
 func get_scene_root():

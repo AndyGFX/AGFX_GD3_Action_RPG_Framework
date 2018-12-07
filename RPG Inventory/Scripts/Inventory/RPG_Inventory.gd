@@ -42,8 +42,6 @@ func _ready():
 	# Load character states, when file missing then is created new with default values
 	#RPG_CharacterCommon.Load()
 	
-
-	
 	pass
 
 func _input(event):

@@ -50,7 +50,7 @@ func _ready():
 	GameData.Save()
 	
 	# create scene objects container
-	self.container = Utils.find_node("Container")
+	self.container = Utils.FindNode("Container")
 	
 	# create message info panel instance
 	msg_info = msg_info_panel.instance()
