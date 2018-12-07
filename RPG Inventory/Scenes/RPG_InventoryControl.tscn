@@ -1,0 +1,1131 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://RPG Inventory/Sprites/Panel-Dark.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/pixelmix.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://RPG Inventory/Sprites/Panel-Light.png" type="Texture" id=3]
+[ext_resource path="res://RPG Inventory/Sprites/CharacterStatusPanel.png" type="Texture" id=4]
+[ext_resource path="res://RPG Inventory/Scripts/Character/RPG_CharacterStatus.gd" type="Script" id=5]
+[ext_resource path="res://RPG Inventory/Prefabs/InventoryCommands.tscn" type="PackedScene" id=6]
+[ext_resource path="res://RPG Inventory/Sprites/Frame-Dark.png" type="Texture" id=7]
+[ext_resource path="res://RPG Inventory/Sprites/Equipment_CharacterSchemet.png" type="Texture" id=8]
+[ext_resource path="res://RPG Inventory/Scripts/Inventory/RPG_Inventory.gd" type="Script" id=9]
+[ext_resource path="res://RPG Inventory/Prefabs/InventoryEmptySlot.tscn" type="PackedScene" id=10]
+[ext_resource path="res://RPG Inventory/Prefabs/EquipmentEmptySlot.tscn" type="PackedScene" id=11]
+[ext_resource path="res://RPG Inventory/Sprites/Visual_CharacterState.png" type="Texture" id=12]
+[ext_resource path="res://RPG Inventory/Scripts/Character/RPG_VisualState.gd" type="Script" id=13]
+[ext_resource path="res://RPG Inventory/Sprites/VisualStateOverlay.png" type="Texture" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 6
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 8
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 8
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="RPG_InventoryControl" type="Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 384.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Theme", "Visibility", "custom_styles" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="InventoryInfoPanel" type="NinePatchRect" parent="." index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 250.0
+margin_top = 141.0
+margin_right = 377.0
+margin_bottom = 212.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 1 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 8
+patch_margin_bottom = 8
+_sections_unfolded = [ "Anchor", "Margin", "Patch Margin", "Rect" ]
+
+[node name="Label_ItemName" type="Label" parent="InventoryInfoPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 15.0
+margin_right = 108.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "ItemName:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label_ItemValue" type="Label" parent="InventoryInfoPanel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 28.0
+margin_right = 109.0
+margin_bottom = 42.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "ItemValue:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label_ItemDesc" type="Label" parent="InventoryInfoPanel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5.0
+margin_top = 43.0
+margin_right = 108.0
+margin_bottom = 102.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "ItemDesc:"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="ItemIconPanel" type="NinePatchRect" parent="InventoryInfoPanel" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 14.0
+margin_right = 26.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+_sections_unfolded = [ "Anchor", "Margin", "Patch Margin" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Texture_ItemPreview" type="TextureRect" parent="InventoryInfoPanel/ItemIconPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 17.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CharacterStatusPanel" type="TextureRect" parent="." index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 17.0
+margin_right = 208.0
+margin_bottom = 97.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+stretch_mode = 0
+script = ExtResource( 5 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="StatsLabel" type="Label" parent="CharacterStatusPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 85.0
+margin_top = 8.0
+margin_right = 132.0
+margin_bottom = 21.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "STATS"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StatLabels" type="Control" parent="CharacterStatusPanel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 84.0
+margin_top = 21.0
+margin_right = 133.0
+margin_bottom = 74.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="HPLabel" type="Label" parent="CharacterStatusPanel/StatLabels" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 37.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "HP:"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="EnergyLabel" type="Label" parent="CharacterStatusPanel/StatLabels" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 12.0
+margin_right = 40.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "Energy:"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="SpeedLabel" type="Label" parent="CharacterStatusPanel/StatLabels" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 23.0
+margin_right = 40.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "Speed:"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="ArmorLabel" type="Label" parent="CharacterStatusPanel/StatLabels" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 34.0
+margin_right = 40.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "Armor:"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="StatValue" type="Control" parent="CharacterStatusPanel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 134.0
+margin_top = 21.0
+margin_right = 183.0
+margin_bottom = 74.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="HPValue" type="Label" parent="CharacterStatusPanel/StatValue" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 40.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.131777, 0.921875, 0.0648193, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "000"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="EnergyValue" type="Label" parent="CharacterStatusPanel/StatValue" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 12.0
+margin_right = 40.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0648193, 0.600479, 0.921875, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "000"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="SpeedValue" type="Label" parent="CharacterStatusPanel/StatValue" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 23.0
+margin_right = 40.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.921875, 0.908484, 0.0648193, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "000"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="ArmorValue" type="Label" parent="CharacterStatusPanel/StatValue" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 34.0
+margin_right = 40.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.83483, 0.0648193, 0.921875, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "000"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="ItemCommandsPanel" parent="." index="2" instance=ExtResource( 6 )]
+
+visible = false
+margin_left = 181.0
+margin_top = 7.0
+margin_right = 263.0
+margin_bottom = 108.0
+
+[node name="InventoryPanel" type="NinePatchRect" parent="." index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 250.0
+margin_top = 7.0
+margin_right = 377.0
+margin_bottom = 146.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 8
+patch_margin_bottom = 8
+_sections_unfolded = [ "Patch Margin" ]
+
+[node name="InventoryLabel" type="Label" parent="InventoryPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 19.0
+margin_top = 1.0
+margin_right = 71.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.996094, 0.996094, 0.996094, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 1
+text = "Inventory"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_constants" ]
+
+[node name="EquipmentPanel" type="NinePatchRect" parent="." index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 112.0
+margin_top = 111.0
+margin_right = 236.0
+margin_bottom = 212.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 8
+patch_margin_bottom = 8
+_sections_unfolded = [ "Patch Margin" ]
+
+[node name="EquipmentLabel" type="Label" parent="EquipmentPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 18.0
+margin_top = 1.0
+margin_right = 87.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "Equipment"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="EquipmentCHaracterScheme" type="TextureRect" parent="EquipmentPanel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 29.0
+margin_top = 25.0
+margin_right = 93.0
+margin_bottom = 89.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 8 )
+stretch_mode = 0
+
+[node name="ItemsSlotContainer" type="Control" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 257.0
+margin_top = 25.0
+margin_right = 370.0
+margin_bottom = 148.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 9 )
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="InventoryEmptySlot 0" parent="ItemsSlotContainer" index="0" instance=ExtResource( 10 )]
+
+margin_right = 24.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 1" parent="ItemsSlotContainer" index="1" instance=ExtResource( 10 )]
+
+margin_left = 19.0
+margin_right = 43.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 2" parent="ItemsSlotContainer" index="2" instance=ExtResource( 10 )]
+
+margin_left = 38.0
+margin_right = 62.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 3" parent="ItemsSlotContainer" index="3" instance=ExtResource( 10 )]
+
+margin_left = 57.0
+margin_right = 81.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 4" parent="ItemsSlotContainer" index="4" instance=ExtResource( 10 )]
+
+margin_left = 76.0
+margin_right = 100.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 5" parent="ItemsSlotContainer" index="5" instance=ExtResource( 10 )]
+
+margin_left = 95.0
+margin_right = 119.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 6" parent="ItemsSlotContainer" index="6" instance=ExtResource( 10 )]
+
+margin_top = 19.0
+margin_right = 24.0
+margin_bottom = 37.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 7" parent="ItemsSlotContainer" index="7" instance=ExtResource( 10 )]
+
+margin_left = 19.0
+margin_top = 19.0
+margin_right = 43.0
+margin_bottom = 37.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 8" parent="ItemsSlotContainer" index="8" instance=ExtResource( 10 )]
+
+margin_left = 38.0
+margin_top = 19.0
+margin_right = 62.0
+margin_bottom = 37.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 9" parent="ItemsSlotContainer" index="9" instance=ExtResource( 10 )]
+
+margin_left = 57.0
+margin_top = 19.0
+margin_right = 81.0
+margin_bottom = 37.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 10" parent="ItemsSlotContainer" index="10" instance=ExtResource( 10 )]
+
+margin_left = 76.0
+margin_top = 19.0
+margin_right = 100.0
+margin_bottom = 37.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 11" parent="ItemsSlotContainer" index="11" instance=ExtResource( 10 )]
+
+margin_left = 95.0
+margin_top = 19.0
+margin_right = 119.0
+margin_bottom = 37.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 12" parent="ItemsSlotContainer" index="12" instance=ExtResource( 10 )]
+
+margin_top = 38.0
+margin_right = 24.0
+margin_bottom = 56.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 13" parent="ItemsSlotContainer" index="13" instance=ExtResource( 10 )]
+
+margin_left = 19.0
+margin_top = 38.0
+margin_right = 43.0
+margin_bottom = 56.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 14" parent="ItemsSlotContainer" index="14" instance=ExtResource( 10 )]
+
+margin_left = 38.0
+margin_top = 38.0
+margin_right = 62.0
+margin_bottom = 56.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 15" parent="ItemsSlotContainer" index="15" instance=ExtResource( 10 )]
+
+margin_left = 57.0
+margin_top = 38.0
+margin_right = 81.0
+margin_bottom = 56.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 16" parent="ItemsSlotContainer" index="16" instance=ExtResource( 10 )]
+
+margin_left = 76.0
+margin_top = 38.0
+margin_right = 100.0
+margin_bottom = 56.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 17" parent="ItemsSlotContainer" index="17" instance=ExtResource( 10 )]
+
+margin_left = 95.0
+margin_top = 38.0
+margin_right = 119.0
+margin_bottom = 56.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 18" parent="ItemsSlotContainer" index="18" instance=ExtResource( 10 )]
+
+margin_top = 57.0
+margin_right = 24.0
+margin_bottom = 75.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 19" parent="ItemsSlotContainer" index="19" instance=ExtResource( 10 )]
+
+margin_left = 19.0
+margin_top = 57.0
+margin_right = 43.0
+margin_bottom = 75.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 20" parent="ItemsSlotContainer" index="20" instance=ExtResource( 10 )]
+
+margin_left = 38.0
+margin_top = 57.0
+margin_right = 62.0
+margin_bottom = 75.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 21" parent="ItemsSlotContainer" index="21" instance=ExtResource( 10 )]
+
+margin_left = 57.0
+margin_top = 57.0
+margin_right = 81.0
+margin_bottom = 75.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 22" parent="ItemsSlotContainer" index="22" instance=ExtResource( 10 )]
+
+margin_left = 76.0
+margin_top = 57.0
+margin_right = 100.0
+margin_bottom = 75.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 23" parent="ItemsSlotContainer" index="23" instance=ExtResource( 10 )]
+
+margin_left = 95.0
+margin_top = 57.0
+margin_right = 119.0
+margin_bottom = 75.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 24" parent="ItemsSlotContainer" index="24" instance=ExtResource( 10 )]
+
+margin_top = 76.0
+margin_right = 24.0
+margin_bottom = 94.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 25" parent="ItemsSlotContainer" index="25" instance=ExtResource( 10 )]
+
+margin_left = 19.0
+margin_top = 76.0
+margin_right = 43.0
+margin_bottom = 94.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 26" parent="ItemsSlotContainer" index="26" instance=ExtResource( 10 )]
+
+margin_left = 38.0
+margin_top = 76.0
+margin_right = 62.0
+margin_bottom = 94.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 27" parent="ItemsSlotContainer" index="27" instance=ExtResource( 10 )]
+
+margin_left = 57.0
+margin_top = 76.0
+margin_right = 81.0
+margin_bottom = 94.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 28" parent="ItemsSlotContainer" index="28" instance=ExtResource( 10 )]
+
+margin_left = 76.0
+margin_top = 76.0
+margin_right = 100.0
+margin_bottom = 94.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 29" parent="ItemsSlotContainer" index="29" instance=ExtResource( 10 )]
+
+margin_left = 95.0
+margin_top = 76.0
+margin_right = 119.0
+margin_bottom = 94.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 30" parent="ItemsSlotContainer" index="30" instance=ExtResource( 10 )]
+
+margin_top = 95.0
+margin_right = 24.0
+margin_bottom = 113.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 31" parent="ItemsSlotContainer" index="31" instance=ExtResource( 10 )]
+
+margin_left = 19.0
+margin_top = 95.0
+margin_right = 43.0
+margin_bottom = 113.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 32" parent="ItemsSlotContainer" index="32" instance=ExtResource( 10 )]
+
+margin_left = 38.0
+margin_top = 95.0
+margin_right = 62.0
+margin_bottom = 113.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 33" parent="ItemsSlotContainer" index="33" instance=ExtResource( 10 )]
+
+margin_left = 57.0
+margin_top = 95.0
+margin_right = 81.0
+margin_bottom = 113.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 34" parent="ItemsSlotContainer" index="34" instance=ExtResource( 10 )]
+
+margin_left = 76.0
+margin_top = 95.0
+margin_right = 100.0
+margin_bottom = 113.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="InventoryEmptySlot 35" parent="ItemsSlotContainer" index="35" instance=ExtResource( 10 )]
+
+margin_left = 95.0
+margin_top = 95.0
+margin_right = 119.0
+margin_bottom = 113.0
+slotType = "InventorySlot"
+category = "undefined"
+checkCategory = false
+
+[node name="EquipmentEmptySlot 0" parent="ItemsSlotContainer" index="36" instance=ExtResource( 11 )]
+
+margin_left = -136.0
+margin_top = 103.0
+margin_right = -112.0
+margin_bottom = 127.0
+_sections_unfolded = [ "Rect" ]
+slotType = "EquipmentSlot"
+category = "Equip1"
+checkCategory = true
+
+[node name="EquipmentEmptySlot 1" parent="ItemsSlotContainer" index="37" instance=ExtResource( 11 )]
+
+margin_left = -136.0
+margin_top = 129.0
+margin_right = -112.0
+margin_bottom = 153.0
+slotType = "EquipmentSlot"
+category = "Equip2"
+checkCategory = true
+
+[node name="EquipmentEmptySlot 2" parent="ItemsSlotContainer" index="38" instance=ExtResource( 11 )]
+
+margin_left = -136.0
+margin_top = 154.0
+margin_right = -112.0
+margin_bottom = 178.0
+slotType = "EquipmentSlot"
+category = "Equip3"
+checkCategory = true
+
+[node name="EquipmentEmptySlot 3" parent="ItemsSlotContainer" index="39" instance=ExtResource( 11 )]
+
+margin_left = -53.0
+margin_top = 104.0
+margin_right = -29.0
+margin_bottom = 128.0
+slotType = "EquipmentSlot"
+category = "Equip4"
+checkCategory = true
+
+[node name="EquipmentEmptySlot 4" parent="ItemsSlotContainer" index="40" instance=ExtResource( 11 )]
+
+margin_left = -54.0
+margin_top = 154.0
+margin_right = -30.0
+margin_bottom = 178.0
+slotType = "EquipmentSlot"
+category = "Equip6"
+checkCategory = true
+
+[node name="EquipmentEmptySlot 5" parent="ItemsSlotContainer" index="41" instance=ExtResource( 11 )]
+
+margin_left = -53.0
+margin_top = 129.0
+margin_right = -29.0
+margin_bottom = 153.0
+slotType = "undefined"
+category = "Equip5"
+checkCategory = true
+
+[node name="VisualStatePanel" type="TextureRect" parent="." index="6"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9.0
+margin_top = 111.0
+margin_right = 120.0
+margin_bottom = 212.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+script = ExtResource( 13 )
+colored = true
+
+[node name="VisualStateLabel" type="Label" parent="VisualStatePanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 1.0
+margin_right = 89.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+text = "Visual state"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="TextureRect" type="TextureRect" parent="VisualStatePanel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 17.0
+margin_top = 22.0
+margin_right = 82.0
+margin_bottom = 87.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 14 )
+stretch_mode = 0
+
+

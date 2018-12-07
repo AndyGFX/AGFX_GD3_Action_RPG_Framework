@@ -20,6 +20,7 @@ Utils="*res://Scripts/Utils/Utils.gd"
 Directions="*res://Scripts/Classes/Directions.gd"
 Globals="*res://Scripts/Globals.gd"
 GameData="*res://Scripts/Classes/GameData.gd"
+RPG_InventoryCommon="*res://RPG Inventory/Scripts/Inventory/RPG_InventoryCommon.gd"
 
 [display]
 

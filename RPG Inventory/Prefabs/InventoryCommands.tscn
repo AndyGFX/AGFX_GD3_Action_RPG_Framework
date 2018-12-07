@@ -1,0 +1,207 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://RPG UI Theme/RPG_UI_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://RPG Inventory/Scripts/Buttons/Button_USE.gd" type="Script" id=2]
+[ext_resource path="res://RPG Inventory/Scripts/Buttons/Button_EAT.gd" type="Script" id=3]
+[ext_resource path="res://RPG Inventory/Scripts/Buttons/Button_DROP.gd" type="Script" id=4]
+[ext_resource path="res://RPG Inventory/Scripts/Buttons/Button_DEL.gd" type="Script" id=5]
+[ext_resource path="res://RPG Inventory/Scripts/Buttons/Button_CLOSE.gd" type="Script" id=6]
+
+
+[node name="ItemCommandsPanel" type="Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 82.0
+margin_bottom = 98.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+_sections_unfolded = [ "Theme", "Visibility" ]
+
+[node name="Container" type="Container" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 82.0
+margin_bottom = 98.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="Container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 66.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 1
+alignment = 0
+_sections_unfolded = [ "Margin", "Theme", "Visibility", "custom_constants" ]
+
+[node name="Button_USE" type="Button" parent="Container/ButtonsContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "USE"
+flat = false
+align = 0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Theme" ]
+
+[node name="Button_EAT" type="Button" parent="Container/ButtonsContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 17.0
+margin_right = 60.0
+margin_bottom = 33.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "EAT"
+flat = false
+align = 0
+script = ExtResource( 3 )
+_sections_unfolded = [ "Theme" ]
+
+[node name="Button_DROP" type="Button" parent="Container/ButtonsContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 34.0
+margin_right = 60.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "DROP"
+flat = false
+align = 0
+script = ExtResource( 4 )
+_sections_unfolded = [ "Theme" ]
+
+[node name="Button_DEL" type="Button" parent="Container/ButtonsContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 51.0
+margin_right = 60.0
+margin_bottom = 67.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "DEL"
+flat = false
+align = 0
+script = ExtResource( 5 )
+_sections_unfolded = [ "Theme" ]
+
+[node name="Button_CLOSE" type="Button" parent="Container/ButtonsContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 68.0
+margin_right = 60.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "CLOSE"
+flat = false
+align = 0
+script = ExtResource( 6 )
+_sections_unfolded = [ "Theme" ]
+
+[connection signal="button_down" from="Container/ButtonsContainer/Button_USE" to="Container/ButtonsContainer/Button_USE" method="_on_Button_USE_button_down"]
+
+[connection signal="button_down" from="Container/ButtonsContainer/Button_EAT" to="Container/ButtonsContainer/Button_EAT" method="_on_Button_EAT_button_down"]
+
+[connection signal="button_down" from="Container/ButtonsContainer/Button_DROP" to="Container/ButtonsContainer/Button_DROP" method="_on_Button_DROP_button_down"]
+
+[connection signal="button_down" from="Container/ButtonsContainer/Button_DEL" to="Container/ButtonsContainer/Button_DEL" method="_on_Button_DEL_button_down"]
+
+[connection signal="button_down" from="Container/ButtonsContainer/Button_CLOSE" to="Container/ButtonsContainer/Button_CLOSE" method="_on_Button_CLOSE_button_down"]
+
+

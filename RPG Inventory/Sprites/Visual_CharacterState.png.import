@@ -1,0 +1,29 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Visual_CharacterState.png-b41a2015b06a6db8ecb6b496d8a9ba3f.stex"
+
+[deps]
+
+source_file="res://RPG Inventory/Sprites/Visual_CharacterState.png"
+dest_files=[ "res://.import/Visual_CharacterState.png-b41a2015b06a6db8ecb6b496d8a9ba3f.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
