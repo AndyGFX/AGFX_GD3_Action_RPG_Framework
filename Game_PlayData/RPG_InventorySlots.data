@@ -1,0 +1,32 @@
+[
+	{
+		"itemName": "Item_0",
+		"slotIndex": "0",
+		"slotType": "InventorySlot"
+	},
+	{
+		"itemName": "Item_1",
+		"slotIndex": "1",
+		"slotType": "InventorySlot"
+	},
+	{
+		"itemName": "Item_2",
+		"slotIndex": "2",
+		"slotType": "InventorySlot"
+	},
+	{
+		"itemName": "Item_4",
+		"slotIndex": "3",
+		"slotType": "InventorySlot"
+	},
+	{
+		"itemName": "Item_3",
+		"slotIndex": "4",
+		"slotType": "InventorySlot"
+	},
+	{
+		"itemName": "Item_5",
+		"slotIndex": "10",
+		"slotType": "InventorySlot"
+	}
+]

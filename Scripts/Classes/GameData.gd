@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_PATH = "res://gamedata.json"
+const SAVE_PATH = "res://Game_PlayData/RPG_Game.data"
 
 
 var items = {}
@@ -10,14 +10,8 @@ var items = {}
 # ---------------------------------------------------------
 func Save():
 
-	# Open the existing save file or create a new one in write mode
-	var save_file = File.new()
-	save_file.open(SAVE_PATH, File.WRITE)
-
-	# converts to a JSON string. We store it in the save_file
-	save_file.store_line(to_json(items))
-	# The change is automatically saved, so we close the file
-	save_file.close()
+	Utils.SaveJSON(SAVE_PATH,items, true)	
+	
 	print("Game data saved.")
 
 # ---------------------------------------------------------
@@ -32,8 +26,7 @@ func Load():
 		self.Save();
 		return
 
-	load_file.open(SAVE_PATH, File.READ)
-	items = parse_json(load_file.get_as_text())
+	self.items = Utils.LoadJSON(SAVE_PATH)
 	print("Game data loaded.")
 
 # ---------------------------------------------------------

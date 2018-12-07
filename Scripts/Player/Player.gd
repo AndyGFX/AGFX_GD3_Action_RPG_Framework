@@ -6,7 +6,6 @@ extends KinematicBody2D
 const TYPE = "PLAYER"
 
 # properties
-export var SPEED 				= 80
 export var lock_move_time 		= 0.35
 export var play_hurt_animation 	= false
 export var DAMAGE             	= 1
@@ -46,6 +45,7 @@ func _ready():
 	GameData.Set('coins',0);
 	GameData.Set('ammo',100);
 	GameData.Save()
+	
 	
 	RPG_CharacterCommon.Save();
 	
@@ -149,7 +149,7 @@ func DoMovement():
 	var motion
 	
 	if hitstun==0:
-		motion = self.movement_direction.normalized()*SPEED
+		motion = self.movement_direction.normalized()*RPG_CharacterCommon.speed
 	else:
 		motion = self.knock_direction.normalized()*125
 	

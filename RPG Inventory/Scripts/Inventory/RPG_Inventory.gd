@@ -19,8 +19,8 @@ func _ready():
 	RPG_InventoryCommon.AddItemToInventory(RPG_InventoryCommon.GetFreeSlotID(),4)
 	RPG_InventoryCommon.AddItemToInventory(10,RPG_InventoryCommon.GetItemByName("Item_5"))
 	
-#	# add items to inventory (for testing purpose only - from file)
-#	RPG_InventoryCommon.SaveSlots()
+#	# add items to inventory (for testing purpose only - to file)
+	RPG_InventoryCommon.SaveSlots()
 
 		
 	# add items to inventory (for testing purpose only - from file)
@@ -33,7 +33,7 @@ func _ready():
 	RPG_InventoryCommon.iconOffset = Vector2(8,8)
 
 	# Save items dictionary
-	#RPG_InventoryCommon.Save()
+	RPG_InventoryCommon.Save()
 
 
 	# Save character states

@@ -21,14 +21,17 @@ func get_scene_root():
 # ---------------------------------------------------------
 # Save to JSON file
 # ---------------------------------------------------------
-func SaveJSON(path,data):
+func SaveJSON(path,data, format=false):
 	
 	# Open the existing save file or create a new one in write mode
 	var save_file = File.new()
 	save_file.open(path, File.WRITE)
-
+	
 	# converts to a JSON string. We store it in the save_file
-	save_file.store_line(to_json(data))
+	if format:
+		save_file.store_line(json_beautifier.beautify_json(to_json(data)))
+	else:
+		save_file.store_line(to_json(data))
 	
 	# The change is automatically saved, so we close the file
 	save_file.close()

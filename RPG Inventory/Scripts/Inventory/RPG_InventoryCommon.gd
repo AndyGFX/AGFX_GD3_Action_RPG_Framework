@@ -6,8 +6,8 @@ extends Node
 
 #const
 
-const SAVE_ITEMS_PATH = "res://ItemsDictionary.json"
-const SAVE_SLOTS_PATH = "res://Slots.json"
+const SAVE_ITEMS_PATH = "res://Game_PlayData/RPG_InventoryItems.data"
+const SAVE_SLOTS_PATH = "res://Game_PlayData/RPG_InventorySlots.data"
 const INVENTORY_SLOTS_COUNT = 36
 const EQUIPMENT_SLOTS_COUNT = 6
 const ItemClass 	= preload("res://RPG Inventory/Scripts/Item/RPG_Item.gd");
@@ -276,7 +276,7 @@ func SaveSlots():
 				
 			slots.append(data)
 
-	Utils.SaveJSON(SAVE_SLOTS_PATH,slots)
+	Utils.SaveJSON(SAVE_SLOTS_PATH,slots,true)
 	print("Slots saved.")
 	
 
