@@ -10,17 +10,20 @@ const SAVE_PATH = "res://Game_PlayData/RPG_CharacterCommon.data"
 
 # player default property values
 
-var HP = 53
-var maxHP = 150
+var HP = 100
+var maxHP = 100
 
-var energy = 70
+var energy = 20
 var maxEnergy = 80
 
 var speed = 50
-var maxSpeed = 200
+var maxSpeed = 100
 
 var armor = 20
-var maxArmor = 90
+var maxArmor = 100
+
+var damage = 1
+var maxDamage = 10
 
 # UI fields in scene for INVENTORY SCREEN
 
@@ -39,10 +42,12 @@ func Save():
 	"speed": self.speed,
 	"armor": self.armor,
 	"energy": self.energy,
+	"damage": self.damage,
 	"maxHP": self.maxHP,
 	"maxSpeed": self.maxSpeed,
 	"maxArmor": self.maxArmor,
 	"maxEnergy": self.maxEnergy,
+	"maxDamage": self.maxDamage,
 	}
 	
 	
@@ -71,6 +76,9 @@ func Load():
 	self.maxArmor = data.maxArmor
 	self.speed = data.speed
 	self.maxSpeed = data.maxSpeed
+	self.damage = data.damage
+	self.maxDamage = data.maxDamage
+	
 	
 # ---------------------------------------------------------
 #  Update values to UI fields
@@ -114,6 +122,14 @@ func Add_Armor(val):
 	if self.armor < 0:  self.armor = 0
 
 # ---------------------------------------------------------
+# ADD val to Damage
+# ---------------------------------------------------------
+func Add_Damage(val):
+	self.damage += val
+	if self.damage > self.maxDamage: self.damage = self.maxDamage
+	if self.damage < 0:  self.damage = 0
+	
+# ---------------------------------------------------------
 # ADD val to max Armor
 # ---------------------------------------------------------
 func Add_MaxArmor(val):
@@ -141,6 +157,13 @@ func Add_MaxHP(val):
 	self.maxHP += val
 	pass
 		
+# ---------------------------------------------------------
+# ADD val to max Damage
+# ---------------------------------------------------------
+func Add_MaxDamage(val):
+	self.maxDamage += val
+	pass
+	
 # ---------------------------------------------------------
 # Find and return max value from all max fields
 # ---------------------------------------------------------

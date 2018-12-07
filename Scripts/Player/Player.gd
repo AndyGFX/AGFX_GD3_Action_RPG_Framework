@@ -8,7 +8,8 @@ const TYPE = "PLAYER"
 # properties
 export var lock_move_time 		= 0.35
 export var play_hurt_animation 	= false
-export var DAMAGE             	= 1
+
+#var DAMAGE             	= 1
 
 #preload instances
 onready var bullet_prefab = preload("res://Prefabs/Items/Bullet.tscn")
@@ -46,6 +47,7 @@ func _ready():
 	GameData.Set('ammo',100);
 	GameData.Save()
 	
+	#self.DAMAGE = RPG_CharacterCommon.damage
 	
 	RPG_CharacterCommon.Save();
 	
@@ -79,6 +81,9 @@ func _physics_process(delta):
 
 	# fire
 	if control.BTN_A: Shooting_A()
+	
+	# Inventory
+	if control.BTN_B: RPG_InventoryCommon.inventoryControl.SwitchInventoryState()
 		
 	# check collision 
 	self.CheckCollision()

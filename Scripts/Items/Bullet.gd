@@ -63,7 +63,7 @@ func _on_body_enter(other):
 		
 	if other.is_in_group("ENEMY"):
 		create_explosion()
-		other.ApplyDamage(self.DAMAGE)
+		other.ApplyDamage(self.DAMAGE*RPG_CharacterCommon.damage)
 		
 		queue_free()
 		

@@ -1,10 +1,12 @@
 {
-	"HP": 53,
+	"HP": 100,
 	"armor": 20,
-	"energy": 70,
-	"maxArmor": 90,
+	"damage": 1,
+	"energy": 20,
+	"maxArmor": 100,
+	"maxDamage": 10,
 	"maxEnergy": 80,
-	"maxHP": 150,
-	"maxSpeed": 200,
+	"maxHP": 100,
+	"maxSpeed": 100,
 	"speed": 50
 }

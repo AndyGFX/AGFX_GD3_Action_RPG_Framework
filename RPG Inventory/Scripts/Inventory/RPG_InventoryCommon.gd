@@ -88,6 +88,7 @@ var holdingItem = null;
 var clickedSlot = null;
 var iconOffset = Vector2(0,0)
 var commandsPanel = null
+var inventoryControl = null
 var debug = true;
 var disableInventory = false;
 
@@ -119,6 +120,7 @@ func Prepare():
 		self.slotList.append(slot);
 		
 	self.commandsPanel = Utils.FindNode("ItemCommandsPanel");
+	self.inventoryControl = Utils.FindNode("RPG_InventoryControl");
 	pass
 
 

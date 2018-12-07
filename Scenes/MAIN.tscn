@@ -12,7 +12,7 @@
 [ext_resource path="res://RPG Inventory/Scenes/RPG_InventoryControl.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Prefabs/Doors/Door_V/Door-V.tscn" type="PackedScene" id=11]
 
-[node name="MAIN" type="Node2D" index="0"]
+[node name="MAIN" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -75,8 +75,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="HUD" parent="CanvasLayer" index="0" instance=ExtResource( 9 )]
 
 [node name="RPG_InventoryControl" parent="CanvasLayer" index="1" instance=ExtResource( 10 )]
-
-visible = false
 
 [node name="Door-V" parent="." index="3" instance=ExtResource( 11 )]
 
