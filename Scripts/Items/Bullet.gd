@@ -40,7 +40,7 @@ func create_explosion():
 	var idx = int(round(rand_range(0,2)))
 	var explosion = scn_explosion[idx].instance()
 	explosion.set_position(get_position())
-	Utils.find_node("Container").add_child(explosion)
+	Utils.FindNode("Container").add_child(explosion)
 	pass
 
 # ---------------------------------------------------------

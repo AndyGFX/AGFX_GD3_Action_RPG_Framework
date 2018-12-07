@@ -7,7 +7,6 @@ const TYPE = "PLAYER"
 
 # properties
 export var SPEED 				= 80
-export var HEALTH 				= 1
 export var lock_move_time 		= 0.35
 export var play_hurt_animation 	= false
 export var DAMAGE             	= 1
@@ -45,9 +44,10 @@ func _ready():
 	# prepare gamedata to default values (remove when you need reset items amount)
 	
 	GameData.Set('coins',0);
-	GameData.Set('health',self.HEALTH);
 	GameData.Set('ammo',100);
 	GameData.Save()
+	
+	RPG_CharacterCommon.Save();
 	
 	# create scene objects container
 	self.container = Utils.FindNode("Container")
@@ -203,8 +203,9 @@ func CheckDamage():
 		
 		if self.hitstun == 0 and body.get("DAMAGE") != null and body.get("TYPE") != TYPE:
 			print(body.get_name())
-			self.HEALTH -= body.get("DAMAGE")			
-			GameData.Set("health",self.HEALTH)
+			
+			RPG_CharacterCommon.Add_HP(-body.get("DAMAGE"))
+			
 			self.hitstun = 10
 			self.knock_direction = global_transform.origin - body.global_transform.origin
 			Globals.ShowHitPoints(body.get("DAMAGE"),global_transform.origin)

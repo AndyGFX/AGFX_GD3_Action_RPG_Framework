@@ -11,7 +11,7 @@ func _ready():
 # Show flying hit points on enemy
 # ---------------------------------------------------------
 func ShowHitPoints(val, pos):
-	var container =  Utils.find_node("Container")
+	var container =  Utils.FindNode("Container")
 	var hit = damageInfoPrefab.instance()
 	hit.get_node("Label").set_text(str(-val))	
 	hit.set_position(pos)

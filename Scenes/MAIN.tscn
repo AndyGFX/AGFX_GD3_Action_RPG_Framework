@@ -20,13 +20,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="YSort" type="YSort" parent="." index="1"]
 
-editor/display_folded = true
 sort_enabled = true
 
 [node name="Player" parent="YSort" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 210, 117 )
-HEALTH = 100
 
 [node name="Health" parent="YSort" index="1" instance=ExtResource( 3 )]
 

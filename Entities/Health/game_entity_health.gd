@@ -17,9 +17,10 @@ func _ready():
 # ---------------------------------------------------------
 func PickupHealth():
 	
-	if !GameData: return
+	if !RPG_CharacterCommon: return
+		
+	if RPG_CharacterCommon.HP>=RPG_CharacterCommon.maxHP: return
 	
-	if GameData.Get(item_type)>=item_limit: return
+	RPG_CharacterCommon.Add_HP(item_amount)
 	
-	GameData.AddWithLimitCheck(item_type,item_amount,item_limit);
 	queue_free()
