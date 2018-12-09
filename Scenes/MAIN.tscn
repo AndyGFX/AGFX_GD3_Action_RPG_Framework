@@ -12,7 +12,7 @@
 [ext_resource path="res://RPG Inventory/Scenes/RPG_InventoryControl.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Prefabs/Doors/Door_V/Door-V.tscn" type="PackedScene" id=11]
 
-[node name="MAIN" type="Node2D"]
+[node name="MAIN" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
