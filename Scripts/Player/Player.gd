@@ -1,5 +1,3 @@
-#extends "res://Scripts/Classes/Entity.gd"
-
 extends KinematicBody2D
 
 # constants
