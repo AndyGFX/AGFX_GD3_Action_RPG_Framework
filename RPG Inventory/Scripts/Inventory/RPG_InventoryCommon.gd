@@ -17,14 +17,14 @@ const slotTexture 	= preload("res://RPG Inventory/Sprites/Inventory_EmptyItemSlo
 
 # item icon list
 const itemImages = [
-	preload("res://RPG Inventory/Sprites/item_0.png"),
-	preload("res://RPG Inventory/Sprites/item_1.png"),
-	preload("res://RPG Inventory/Sprites/item_2.png"),
-	preload("res://RPG Inventory/Sprites/item_3.png"),
-	preload("res://RPG Inventory/Sprites/item_4.png"),
-	preload("res://RPG Inventory/Sprites/item_5.png"),
-	preload("res://RPG Inventory/Sprites/item_6.png"),
-	preload("res://RPG Inventory/Sprites/item_7.png")
+	preload("res://RPG Inventory/UserItems/UserItemSprites/item_0.png"),
+	preload("res://RPG Inventory/UserItems/UserItemSprites/item_1.png"),
+	preload("res://RPG Inventory/UserItems/UserItemSprites/item_2.png"),
+	preload("res://RPG Inventory/UserItems/UserItemSprites/item_3.png"),
+	preload("res://RPG Inventory/UserItems/UserItemSprites/item_4.png"),
+	preload("res://RPG Inventory/UserItems/UserItemSprites/item_5.png"),
+	preload("res://RPG Inventory/UserItems/UserItemSprites/item_6.png"),
+	preload("res://RPG Inventory/UserItems/UserItemSprites/item_7.png")
 ];
 
 # item definitions
@@ -35,7 +35,7 @@ const itemDictionary = {
 		"itemIcon": itemImages[0],
 		"itemCategory" : "Equip1",
 		"itemDesc": "MAX ARMOR +100",
-		"script" : "res://RPG Inventory/Scripts/UserItemsClass/Item_0.gd"
+		"script" : "res://RPG Inventory/UserItems/UserItemClasses/Item_0.gd"
 	},
 	1: {
 		"itemName": "Item_1",
@@ -43,7 +43,7 @@ const itemDictionary = {
 		"itemIcon": itemImages[1],
 		"itemCategory" : "none",
 		"itemDesc": "MAX SPEED +50",
-		"script" : "res://RPG Inventory/Scripts/UserItemsClass/Item_1.gd"
+		"script" : "res://RPG Inventory/UserItems/UserItemClasses/Item_1.gd"
 	},
 	2: {
 		"itemName": "Item_2",
@@ -51,7 +51,7 @@ const itemDictionary = {
 		"itemIcon": itemImages[2],
 		"itemCategory" : "none",
 		"itemDesc": "MAX ENERGY +50",
-		"script" : "res://RPG Inventory/Scripts/UserItemsClass/Item_2.gd"
+		"script" : "res://RPG Inventory/UserItems/UserItemClasses/Item_2.gd"
 	},
 	3: {
 		"itemName": "Item_3",
@@ -59,7 +59,7 @@ const itemDictionary = {
 		"itemIcon": itemImages[3],
 		"itemCategory" : "none",
 		"itemDesc": "MAX HP +30 or HP +100",
-		"script" : "res://RPG Inventory/Scripts/UserItemsClass/Item_3.gd"
+		"script" : "res://RPG Inventory/UserItems/UserItemClasses/Item_3.gd"
 	},
 	4: {
 		"itemName": "Item_4",
@@ -67,7 +67,7 @@ const itemDictionary = {
 		"itemIcon": itemImages[4],
 		"itemCategory" : "none",
 		"itemDesc": "item desc 4",
-		"script" : "res://RPG Inventory/Scripts/UserItemsClass/Item_4.gd"
+		"script" : "res://RPG Inventory/UserItems/UserItemClasses/Item_4.gd"
 	},
 	5: {
 		"itemName": "Item_5",
@@ -75,7 +75,7 @@ const itemDictionary = {
 		"itemIcon": itemImages[5],
 		"itemCategory" : "none",
 		"itemDesc": "item desc 5",
-		"script" : "res://RPG Inventory/Scripts/UserItemsClass/Item_5.gd"
+		"script" : "res://RPG Inventory/UserItems/UserItemClasses/Item_5.gd"
 	},
 };
 

@@ -658,7 +658,6 @@ stretch_mode = 0
 
 [node name="ItemsSlotContainer" type="Control" parent="." index="6"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1036,7 +1035,7 @@ margin_top = 129.0
 margin_right = -112.0
 margin_bottom = 153.0
 slotType = "EquipmentSlot"
-category = "Equip2"
+category = "Equip_WEAPON_A"
 checkCategory = true
 
 [node name="EquipmentEmptySlot 2" parent="ItemsSlotContainer" index="38" instance=ExtResource( 12 )]
@@ -1046,7 +1045,7 @@ margin_top = 154.0
 margin_right = -112.0
 margin_bottom = 178.0
 slotType = "EquipmentSlot"
-category = "Equip3"
+category = "Equip_SPEED"
 checkCategory = true
 
 [node name="EquipmentEmptySlot 3" parent="ItemsSlotContainer" index="39" instance=ExtResource( 12 )]
@@ -1056,7 +1055,7 @@ margin_top = 104.0
 margin_right = -29.0
 margin_bottom = 128.0
 slotType = "EquipmentSlot"
-category = "Equip4"
+category = "Equip_ARMOR"
 checkCategory = true
 
 [node name="EquipmentEmptySlot 4" parent="ItemsSlotContainer" index="40" instance=ExtResource( 12 )]
@@ -1066,7 +1065,7 @@ margin_top = 154.0
 margin_right = -30.0
 margin_bottom = 178.0
 slotType = "EquipmentSlot"
-category = "Equip6"
+category = "Equip_ENERGY"
 checkCategory = true
 
 [node name="EquipmentEmptySlot 5" parent="ItemsSlotContainer" index="41" instance=ExtResource( 12 )]
@@ -1076,7 +1075,7 @@ margin_top = 129.0
 margin_right = -29.0
 margin_bottom = 153.0
 slotType = "undefined"
-category = "Equip5"
+category = "Equip_WEAPON_B"
 checkCategory = true
 
 [node name="VisualStatePanel" type="TextureRect" parent="." index="7"]

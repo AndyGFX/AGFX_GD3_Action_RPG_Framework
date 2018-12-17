@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/item_4.png-14f36873fa3f243064ad2ac9534cb8e9.stex"
+path="res://.import/item_6.png-62f349208ee0e56f347d82462dd47bd3.stex"
 
 [deps]
 
-source_file="res://RPG Inventory/Sprites/item_4.png"
-dest_files=[ "res://.import/item_4.png-14f36873fa3f243064ad2ac9534cb8e9.stex" ]
+source_file="res://RPG Inventory/UserItems/UserItemSprites/item_6.png"
+dest_files=[ "res://.import/item_6.png-62f349208ee0e56f347d82462dd47bd3.stex" ]
 
 [params]
 
