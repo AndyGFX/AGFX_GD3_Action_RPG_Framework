@@ -68,6 +68,8 @@ BTN_X=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"",
  ]
 BTN_Y=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":67,"unicode":0,"echo":false,"script":null)
  ]
+BTN_OPTION=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"unicode":0,"echo":false,"script":null)
+ ]
 
 [rendering]
 

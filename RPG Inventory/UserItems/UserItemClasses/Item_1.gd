@@ -27,12 +27,12 @@ func OnClose():
 	
 func OnEquip():
 	.OnEquip()
-	RPG_CharacterCommon.Add_MaxSpeed(50)
+	RPG_CharacterCommon.Add_MaxSpeed(self.itemValue)
 	RPG_CharacterCommon.Update()
 	pass
 
 func OnUnEquip():
 	.OnUnEquip()
-	RPG_CharacterCommon.Add_MaxSpeed(-50)
+	RPG_CharacterCommon.Add_MaxSpeed(-self.itemValue)
 	RPG_CharacterCommon.Update()
 	pass	

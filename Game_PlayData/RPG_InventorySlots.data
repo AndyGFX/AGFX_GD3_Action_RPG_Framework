@@ -1,11 +1,11 @@
 [
 	{
-		"itemName": "Item_0",
+		"itemName": "SpeedUp 30",
 		"slotIndex": "0",
 		"slotType": "InventorySlot"
 	},
 	{
-		"itemName": "Item_1",
+		"itemName": "Max speed",
 		"slotIndex": "1",
 		"slotType": "InventorySlot"
 	},

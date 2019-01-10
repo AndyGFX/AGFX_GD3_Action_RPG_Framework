@@ -17,8 +17,8 @@ const slotTexture 	= preload("res://RPG Inventory/Sprites/Inventory_EmptyItemSlo
 
 # item icon list
 const itemImages = [
-	preload("res://RPG Inventory/UserItems/UserItemSprites/item_0.png"),
-	preload("res://RPG Inventory/UserItems/UserItemSprites/item_1.png"),
+	preload("res://RPG Inventory/UserItems/UserItemSprites/item_speed_1.png"),
+	preload("res://RPG Inventory/UserItems/UserItemSprites/item_speed_2.png"),
 	preload("res://RPG Inventory/UserItems/UserItemSprites/item_2.png"),
 	preload("res://RPG Inventory/UserItems/UserItemSprites/item_3.png"),
 	preload("res://RPG Inventory/UserItems/UserItemSprites/item_4.png"),
@@ -30,19 +30,19 @@ const itemImages = [
 # item definitions
 const itemDictionary = {
 	0: {
-		"itemName": "Item_0",
-		"itemValue": 456,
+		"itemName": "SpeedUp 30",
+		"itemValue": 30,
 		"itemIcon": itemImages[0],
-		"itemCategory" : "Equip1",
-		"itemDesc": "MAX ARMOR +100",
+		"itemCategory" : "none",
+		"itemDesc": "Increase current speed +30",
 		"script" : "res://RPG Inventory/UserItems/UserItemClasses/Item_0.gd"
 	},
 	1: {
-		"itemName": "Item_1",
-		"itemValue": 100,
+		"itemName": "Max speed",
+		"itemValue": 25,
 		"itemIcon": itemImages[1],
-		"itemCategory" : "none",
-		"itemDesc": "MAX SPEED +50",
+		"itemCategory" : "Equip_SPEED",
+		"itemDesc": "Set MAX SPEED +25",
 		"script" : "res://RPG Inventory/UserItems/UserItemClasses/Item_1.gd"
 	},
 	2: {

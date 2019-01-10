@@ -77,11 +77,14 @@ func _physics_process(delta):
 	# set sprite facing
 	self.SetSpriteOrientation()
 
-	# fire
+	# fire #1
 	if control.BTN_A: Shooting_A()
 	
+	# fire #2
+	if control.BTN_A: Shooting_B()
+	
 	# Inventory
-	if control.BTN_B: RPG_InventoryCommon.inventoryControl.SwitchInventoryState()
+	if control.BTN_OPTION: RPG_InventoryCommon.inventoryControl.SwitchInventoryState()
 		
 	# check collision 
 	self.CheckCollision()
@@ -106,6 +109,11 @@ func Shooting_A():
 	GameData.Add("ammo",-1)
 	pass
 	
+# --------------------------------------------------------------------
+# Fire [A]
+# --------------------------------------------------------------------
+func Shooting_B():
+	pass
 	
 # --------------------------------------------------------------------
 # Check collision
