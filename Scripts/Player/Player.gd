@@ -17,6 +17,7 @@ onready var msg_info_panel = preload("res://Prefabs/UI/MessageInfo.tscn")
 
 #preload classes
 var inputControl = preload("res://Scripts/Classes/InputControl.gd")
+var motion = null;
 
 # variables
 var movement_direction = Directions.CENTER
@@ -110,7 +111,7 @@ func Shooting_A():
 	pass
 	
 # --------------------------------------------------------------------
-# Fire [A]
+# Fire [B]
 # --------------------------------------------------------------------
 func Shooting_B():
 	pass
@@ -120,7 +121,7 @@ func Shooting_B():
 # --------------------------------------------------------------------
 func CheckCollision():
 
-	if is_on_wall():
+	if is_on_wall() and motion!=Directions.CENTER:
 		
 		if self.sprite_direction == "Left" and test_move(transform,Directions.LEFT):
 			SwitchAnimation("Push")
@@ -156,8 +157,6 @@ func GetSpriteDirection():
 # Entity movement by controller 
 # --------------------------------------------------------------------
 func DoMovement():
-	
-	var motion
 	
 	if hitstun==0:
 		motion = self.movement_direction.normalized()*RPG_CharacterCommon.speed

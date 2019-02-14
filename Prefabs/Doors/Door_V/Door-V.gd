@@ -7,7 +7,7 @@ func _ready():
 func AnimationDone(anim_name):
 	match anim_name:
 		"Close":
-			
+			$Blocker/CollisionShape2D.disabled = false
 			$DoorAnim.get_node("AnimationPlayer").stop()
 			pass
 			
