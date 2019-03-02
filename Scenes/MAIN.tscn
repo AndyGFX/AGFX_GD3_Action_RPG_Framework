@@ -7,10 +7,10 @@
 [ext_resource path="res://Prefabs/Enemy/BasicEnemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Entities/Ammo/Entity_Ammo_3.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Entities/InfoPanel/InfoPanel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Prefabs/Doors/Door_H/Door-H.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Prefabs/UI/HUD.tscn" type="PackedScene" id=9]
-[ext_resource path="res://RPG Inventory/Scenes/RPG_InventoryControl.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Prefabs/Doors/Door_V/Door-V.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Prefabs/Doors/Door_V/Door-V.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/Doors/Door_H/Door-H.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prefabs/UI/HUD.tscn" type="PackedScene" id=10]
+[ext_resource path="res://RPG Inventory/Scenes/RPG_InventoryControl.tscn" type="PackedScene" id=11]
 
 [node name="MAIN" type="Node2D"]
 
@@ -48,15 +48,16 @@ position = Vector2( 262, 166 )
 position = Vector2( 186, 159 )
 panel_offset = Vector2( -8, -60 )
 
-[node name="Door-H" parent="YSort" instance=ExtResource( 8 )]
+[node name="Door-V" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 312, 97 )
+
+[node name="Door-H" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 192, 224 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource( 9 )]
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 10 )]
 
-[node name="RPG_InventoryControl" parent="CanvasLayer" instance=ExtResource( 10 )]
-
-[node name="Door-V" parent="." instance=ExtResource( 11 )]
-position = Vector2( 312, 97 )
+[node name="RPG_InventoryControl" parent="CanvasLayer" instance=ExtResource( 11 )]
+visible = false
 

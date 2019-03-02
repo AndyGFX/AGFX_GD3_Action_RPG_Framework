@@ -40,7 +40,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "TileSetCutter", "eska.aseprite_importer", "vnen.tiled_importer" )
+enabled=PoolStringArray( "eska.aseprite_importer", "vnen.tiled_importer" )
 
 [importer_defaults]
 

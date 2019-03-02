@@ -154,6 +154,9 @@ func parse_tileset(parser):
 		elif parser.get_node_type() == XMLParser.NODE_ELEMENT:
 			if parser.get_node_name() == "tile":
 				var attr = attributes_to_dict(parser)
+					
+				
+						
 				var tile_data = parse_tile_data(parser)
 				if typeof(tile_data) != TYPE_DICTIONARY:
 					# Error happened
@@ -166,10 +169,18 @@ func parse_tileset(parser):
 					data.tilepropertytypes[str(attr.id)] = tile_data.propertytypes
 					tile_data.erase("tileproperties")
 					tile_data.erase("tilepropertytypes")
+				
+				# AGFX here add type to properties
+#				if "type" in attr:
+#					print(attr)
+					
+					
 				data.tiles[str(attr.id)] = tile_data
-
+					
+					
 			elif parser.get_node_name() == "image":
 				var attr = attributes_to_dict(parser)
+
 				if not "source" in attr:
 					printerr("Error loading image tag. No source attribute found (around line %d)." % [parser.get_current_line()])
 					return ERR_INVALID_DATA

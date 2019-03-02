@@ -23,7 +23,7 @@
 tool
 extends EditorImportPlugin
 
-enum Preset { PRESET_DEFAULT, PRESET_PIXEL_ART }
+enum { PRESET_DEFAULT, PRESET_PIXEL_ART }
 
 const TiledMapReader = preload("tiled_map_reader.gd")
 
@@ -35,9 +35,9 @@ func get_visible_name():
 
 func get_recognized_extensions():
 	if ProjectSettings.get_setting("tiled_importer/enable_json_format"):
-		return ["json", "tmx"]
+		return ["json", "tsx"]
 	else:
-		return ["tmx"]
+		return ["tsx"]
 
 func get_save_extension():
 	return "res"

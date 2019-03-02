@@ -220,6 +220,7 @@ func make_layer(layer, parent, root, data):
 		tilemap.visible = visible
 		tilemap.mode = map_mode
 		tilemap.cell_half_offset = map_offset
+		tilemap.format = 1
 		tilemap.cell_clip_uv = options.uv_clip
 		tilemap.cell_y_sort = true
 		tilemap.cell_tile_origin = TileMap.TILE_ORIGIN_BOTTOM_LEFT
@@ -485,7 +486,7 @@ func make_layer(layer, parent, root, data):
 
 				var is_tile_object = tileset.tile_get_region(tile_id).get_area() == 0
 				var collisions = tileset.tile_get_shape_count(tile_id)
-				var has_collisions = collisions > 0 && object.type != "sprite"
+				var has_collisions = collisions > 0 && object.has("type") && object.type != "sprite"
 				var sprite = Sprite.new()
 				var pos = Vector2()
 				var rot = 0
@@ -564,6 +565,12 @@ func make_layer(layer, parent, root, data):
 
 				if options.save_tiled_properties:
 					set_tiled_properties_as_meta(obj_root, object)
+				
+				
+#				if "type" in object:
+#					print(object.type)
+#					obj_root.set_meta("type",object.type)
+					
 				if options.custom_properties:
 					if options.tile_metadata:
 						var tile_meta = tileset.get_meta("tile_meta")
@@ -765,7 +772,7 @@ func build_tileset_for_scene(tilesets, source_path, options):
 			set_tiled_properties_as_meta(result, ts)
 		if options.custom_properties:
 			if "properties" in ts and "propertytypes" in ts:
-				set_custom_properties(result, ts.properties, ts.propertytypes)
+				set_custom_properties(result, ts)
 
 	if options.custom_properties and options.tile_metadata:
 		result.set_meta("tile_meta", tile_meta)
@@ -843,7 +850,7 @@ func read_file(path):
 
 	var content = JSON.parse(file.get_as_text())
 	if content.error != OK:
-		print_error("Error parsing JSON: ", content.error_string)
+		print_error("Error parsing JSON: " + content.error_string)
 		return content.error
 
 	return content.result
@@ -868,7 +875,7 @@ func read_tileset_file(path):
 
 	var content = JSON.parse(file.get_as_text())
 	if content.error != OK:
-		print_error("Error parsing JSON: ", content.error_string)
+		print_error("Error parsing JSON: " + content.error_string)
 		return content.error
 
 	return content.result
