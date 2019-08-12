@@ -60,4 +60,3 @@ position = Vector2( 192, 224 )
 
 [node name="RPG_InventoryControl" parent="CanvasLayer" instance=ExtResource( 11 )]
 visible = false
-

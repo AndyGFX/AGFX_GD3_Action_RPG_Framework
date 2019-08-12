@@ -74,4 +74,3 @@ Button/styles/pressed = SubResource( 5 )
 Panel/styles/panel = SubResource( 6 )
 Panel/styles/panelf = SubResource( 7 )
 Panel/styles/panelnc = SubResource( 8 )
-
